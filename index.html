@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCC: A História do Jornal Impresso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f5f5dc; 
+      color: #3e2723; 
+      font-family: 'Dancing Script', cursive;
+      line-height: 1.5;
+      background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    }
+
+    .hero-banner {
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #eaddca;
+      border-bottom: 5px double #3e2723;
+    }
+
+    .hero-banner h1 { font-size: 3.5rem; }
+
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fdf5e6;
+      border: 2px solid #3e2723;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0px #d7c4ab;
+    }
+
+    .card-header {
+      padding: 20px;
+      cursor: pointer;
+      font-size: 2.1rem;
+      text-align: center;
+      background-color: #efe0cc;
+      border-bottom: 1px solid #3e2723;
+    }
+
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease-out;
+      padding: 0 25px;
+    }
+
+    .card.active .card-content {
+      max-height: 2500px;
+      padding: 25px;
+    }
+
+    /* Ajuste do vídeo para 16:9 */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-bottom: 20px;
+      border: 2px solid #3e2723;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+    }
+
+    .text-content {
+      font-size: 1.6rem;
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 1.3rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-banner">
+    <h1>A História do Jornal Impresso</h1>
+    <p>Apresentação de TCC Interativa</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">A Força da Informação ✒️</div>
+      <div class="card-content">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LLqOs1g6AoY?start=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-content">Os jornais têm sido uma força poderosa na formação da opinião pública e na disseminação de informações durante séculos, conectando pessoas e dando voz ao protesto e à mudança social.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">Johannes Gutenberg e os Tipos Móveis ✒️</div>
+      <div class="card-content">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LLqOs1g6AoY?start=104" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-content">Johannes Gutenberg, um artesão alemão do século XV, é creditado com a invenção da imprensa de tipos móveis, permitindo a produção rápida e barata de textos e democratizando o acesso à informação.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">O Primeiro Jornal: Johann Carolus ✒️</div>
+      <div class="card-content">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LLqOs1g6AoY?start=172" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-content">Em 1605, Johann Carolus publicou o "Relation", considerado o primeiro periódico de notícias do mundo, marcando a transição de panfletos informais para a distribuição eficiente e profissional de notícias.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">O Quarto Poder e as Revoluções ✒️</div>
+      <div class="card-content">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LLqOs1g6AoY?start=294" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-content">Os jornais desempenharam um papel crucial em grandes agitações sociais, como a Guerra Civil Inglesa e as Revoluções Francesa e Americana, atuando como ferramentas de fiscalização e debate público.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">Legado Final ✒️</div>
+      <div class="card-content">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LLqOs1g6AoY?start=344" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-content">Mesmo com as mudanças tecnológicas, os jornais permanecem como a base do jornalismo moderno e continuam a desempenhar um papel vital na sociedade contemporânea.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Apresentação Acadêmica • TCC</p>
+  </footer>
+
+  <script>
+    function toggleCard(header) {
+      const card = header.parentElement;
+      document.querySelectorAll('.card').forEach(c => {
+        if(c !== card) c.classList.remove('active');
+      });
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
